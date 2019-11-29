@@ -1,21 +1,22 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">
-      <!-- <svg>
-        <use xlink:href="#icon-QQ"></use> 
-      </svg> -->
-      <svg-icon icon-class="QQ"></svg-icon>
-      Home
+      <router-link to="/home">
+        <svg-icon icon-class="QQ" ></svg-icon>
+        <!-- <svg>
+          <use xlink:href="#icon-qq"></use>
+        </svg> -->
+        Home
       </router-link> |
       <router-link to="/about">
-      <!-- <svg>
-        <use xlink:href="#icon-QQs"></use> 
-      </svg> -->
-      <svg-icon icon-class="QQs"></svg-icon>
+        <!-- <svg>
+          <use xlink:href="#icon-wx"></use>
+        </svg> -->
+        <svg-icon icon-class="QQs"></svg-icon>
       About</router-link>
     </div>
-    <router-view/>
+    <!-- 插座 -->
+    <router-view />
   </div>
 </template>
 <script>

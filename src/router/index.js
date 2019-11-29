@@ -1,15 +1,13 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Layout from '@/layout'
-
-Vue.use(VueRouter)
-
-// 通用页面 不需要守卫，可以直接访问
+import Vue from "vue";
+import Router from "vue-router";
+import Layout from '@/layout'; // 布局页
+Vue.use(Router);
+// 通用页面：不需要守卫，可直接访问
 export const constRoutes = [
   {
     path: "/login",
     component: () => import("@/views/Login"),
-    /* hidden: true // 导航菜单忽略该项 */
+    hidden: true // 导航菜单忽略该项
   },
   {
     path: "/",
@@ -29,7 +27,7 @@ export const constRoutes = [
     ]
   }
 ];
-
+// 权限页面：受保护页面，要求用户登录并拥有访问权限的角色才能访问
 export const asyncRoutes = [
   {
     path: "/about",
@@ -50,14 +48,8 @@ export const asyncRoutes = [
     ]
   }
 ];
-
-
-
-
-const router = new VueRouter({
-  mode: 'history',
+export default new Router({
+  mode: "history",
   base: process.env.BASE_URL,
-  constRoutes
-})
-
-export default router
+  routes: constRoutes
+});
