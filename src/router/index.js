@@ -9,7 +9,7 @@ export const constRoutes = [
   {
     path: "/login",
     component: () => import("@/views/Login"),
-    hidden: true // 导航菜单忽略该项
+    /* hidden: true // 导航菜单忽略该项 */
   },
   {
     path: "/",
