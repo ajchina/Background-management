@@ -15,16 +15,13 @@ export default {
     };
   },
   methods: {
-    login() { 
-        this.$store.dispath(`user/login`, {username: this.username})
-        .then(() => {
-          this.$router.push({
-            path: this.$router.query.redirect || '/'
-          })
-        })
-        .catch(() => {
-          alert('登陆失败')
-        })
+    login() {
+        this.$store.dispatch('user/login', {username: this.username})
+            .then(() => {
+                this.$router.push({
+                    path: this.$route.query.redirect || '/'
+                })
+            })
     }
   }
 };

@@ -7,5 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
     user
+  },
+  getters: {
+    roles: state => state.user.roles,
+    hasRoles: state => state.user.roles && state.user.roles.length > 0
   }
 })
